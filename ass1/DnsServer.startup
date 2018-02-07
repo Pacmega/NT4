@@ -1,2 +1,4 @@
 ifconfig eth0 up
 /etc/init.d/networking start
+
+route add default gw 68.80.0.1

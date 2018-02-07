@@ -3,8 +3,8 @@ auto lo
 iface lo inet loopback
 auto eth0
 iface eth0 inet static
-	address 68.80.13.2
-	netmask 255.255.255.0
+	address 68.80.0.3
+	netmask 255.248.0.0
 iface eth0 inet6 static
 	address 2001:21:1:2101::1
 	netmask 64
