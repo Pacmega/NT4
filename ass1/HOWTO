@@ -1,0 +1,41 @@
+NETKIT LAB FOR SIMULATION OF A DAY IN THE LIFE LAB
+
+1. STARTUP OF THE LAB
+
+1. Unzip the lab, you'll get a directory structure with root aditl.
+2. Start the lab from the root directory by issuing this command: lstart.
+   For the "Webserver" node you'll be asked for your Ubuntu password.
+3. If everything goes well you've got 5 unconfigured nodes running:
+Laptop - connected to network A
+Router1 - connected to network A and B
+Router2 - connected to network B and C
+DnsServer - connected to network B
+WebServer - connected to network C
+
+2. DYNAMIC CONFIGURATION OF THE NETWORK
+Once you have your nodes running you can issue commands to configure your network interfaces and add routing information.
+
+3. STATIC CONFIGURATION OF THE NETWORK
+
+3.1 CONFIGURATION OF IP ADDRESSES, MASKS AND DEFAULT GATEWAYS
+
+If you want to use static configuration of your interfaces, meaning you define it once and it is configured after each run of the lab, you can do it in the corresponding "interfaces" files.
+These files can be found in the directory <NODE>/etc/network, so e.g. interfaces file for the Laptop node can be found in 
+aditl/Laptop/etc/network/interfaces. With this file you can specify IPv4 adress, mask, IPv6 address, mask and default gateway for the Laptop node. Format is exactly the same as used in Linux. 
+To explain a little bit how this file can be used I've put an interface.example file in the root directory of this lab.
+
+3.2 ROUTING AND OTHER COMMANDS DURING STARTUP
+
+Every node has a script file <NODE>.startup in the root directory of the lab.
+Here you can put any commands you want to run during startup of the node.
+So, e.g. commands which are run at startup of Laptop can be put in the Laptop.startup file. Don't remove the first preconfigured command in these scripts ! It's there to startup your interfaces.
+An example of routing command can be found in Example.startup file.
+
+3.3 HOST.STARTUP
+host.startup is a file where you can put your commands for your host node and you have to run it on your own by issuing command:
+bash host.startup.
+
+4. SHUTDOWN OF THE LAB
+To close all the nodes issue: lcrash
+
+

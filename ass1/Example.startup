@@ -1,0 +1,7 @@
+/etc/init.d/networking start
+
+# add an IPV4 route
+route add -net 10.60.0.0 gw 192.168.11.254 netmask 255.255.0.0
+
+# add an IPV6 route
+route -A inet6 2001:31:a:310b::0/64: gw 2001:21:1::254

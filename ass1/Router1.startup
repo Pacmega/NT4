@@ -1,0 +1,4 @@
+ifconfig eth0 up
+ifconfig eth1 up
+/etc/init.d/networking start
+sysctl -w net.ipv6.conf.all.forwarding=1

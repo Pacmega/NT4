@@ -1,0 +1,27 @@
+# interfaces(5) file used by ifup(8) and ifdown(8)
+auto lo
+iface lo inet loopback
+# configuration of your eth0 interface : IPV4 address and mask
+auto eth0
+iface eth0 inet static
+	address 172.26.0.254
+	netmask 255.255.255.0
+# configuration of your eth1 interface : IPV4 address and mask
+auto eth1
+iface eth1 inet static
+	address 192.168.11.253
+	netmask 255.255.255.0
+#configuration of your default gateway for IPV4
+gateway 192.168.11.3
+#configuration of your IPV6 address and mask
+iface eth0 inet6 static
+	address 2001:31:a:310b::254
+	netmask 64
+#configuration of your IPV6 address and mask
+iface eth1 inet6 static
+	address 2001:31:1:31fb::254
+	netmask 64
+#configuration of your IPV6 default gateway
+gateway 2001:31:1:4144::254
+#configuration of SLAAC interfaces
+iface eth0 inet6 auto
