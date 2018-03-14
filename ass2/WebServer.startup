@@ -1,0 +1,7 @@
+ifconfig eth0 up
+/etc/init.d/networking start
+
+route add default gw 64.233.240.1
+
+route add -net 68.80.0.0 gw 64.233.240.1 netmask 255.248.0.0
+route add -net 68.80.13.0 gw 64.233.240.1 netmask 255.255.255.0
