@@ -82,34 +82,24 @@ int main()
 						{
 							if (password[stringPos] != '\0')
 							{
-								cout << readChar << " ^ " << password[stringPos] << " = " << (unsigned char)(readChar ^ password[stringPos]) << endl;
-								cout << (readChar ^ password[stringPos]) << endl;
 								outputFile << (unsigned char)(readChar ^ password[stringPos]);
 								stringPos++;
 							}
 							else
 							{
 								stringPos = 0;
-								cout << (readChar ^ password[stringPos]);
 								outputFile << (unsigned char)(readChar ^ password[stringPos]);
 							}
-
-							// if (password[stringPos] != '\0')
-							// {
-							// 	outputFile << (readChar ^ password[stringPos]);
-							// 	stringPos++;
-							// }
-							// else
-							// {
-							// 	stringPos = 0;
-							// 	outputFile << (readChar ^ password[stringPos]);
-							// }
 						}
 
 						// Done encrypting.
 						inputFile.close();
 						outputFile.close();
 						stringPos = 0;
+					}
+					else
+					{
+						cout << "Unable to open output file." << endl;
 					}
 				}
 				else
@@ -140,20 +130,16 @@ int main()
 					{
 						// Both files opened, get to work.
 						
-						// TODO: something isn't quite right here, everything becomes numbers and more numbers than there were characters.
 						while (inputFile >> noskipws >> readChar)
 						{
 							if (password[stringPos] != '\0')
 							{
-								cout << readChar << " ^ " << password[stringPos] << " = " << (readChar ^ password[stringPos]) << endl;
-								cout << (readChar ^ password[stringPos]) << endl;
 								outputFile << (unsigned char)(readChar ^ password[stringPos]);
 								stringPos++;
 							}
 							else
 							{
 								stringPos = 0;
-								cout << (readChar ^ password[stringPos]);
 								outputFile << (unsigned char)(readChar ^ password[stringPos]);
 							}
 						}
@@ -162,6 +148,10 @@ int main()
 						inputFile.close();
 						outputFile.close();
 						stringPos = 0;
+					}
+					else
+					{
+						cout << "Unable to open output file." << endl;
 					}
 				}
 				else
