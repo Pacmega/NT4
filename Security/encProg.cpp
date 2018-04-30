@@ -4,30 +4,6 @@
 
 using namespace std;
 
-// char* fileNameRequest()
-// {
-// 	char UserInput[50];
-
-// 	cout << "What is the full name of the file to use?" << endl;
-// 	cout << "Reminder: having spaces in your file names is NOT allowed." << endl;
-// 	cin >> UserInput;
-// 	cout << "File name inserted: " << UserInput << endl;
-
-// 	return UserInput;
-// }
-
-// string passwordRequest()
-// {
-// 	char UserInput[50];
-
-// 	cout << "What is the password that should be used?" << endl;
-// 	cout << "Reminder: having spaces in your password is NOT allowed." << endl;
-// 	cin >> UserInput;
-// 	cout << "Password given: " << UserInput << endl;
-
-// 	return UserInput;
-// }
-
 int main()
 {
 	char n = '0';
